@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+template<class T>
+void display(T x,T y, char operation)
+{
+
+	if(operation=='+')
+	cout << x+y ;
+	if (operation == '/')
+		cout << x / y;
+	if (operation == '-')
+		cout << x - y;
+	if (operation == '*')
+		cout << x * y;
+}
+
+
+void main()
+{
+	cout <<"10 + 6 = ";
+	display(10, 6, '+');
+	cout << "\n10 * 6 = ";
+	display(10, 6, '*');
+	cout << "\n10 - 6 = ";
+	display(10, 6, '-');
+	cout << "\n10 / 6 = ";
+	display(10, 6, '/');
+	cout << endl;
+
+	system("pause");
+}
