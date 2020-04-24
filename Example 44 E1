@@ -1,0 +1,73 @@
+Main.cpp
+#include "mult.h"
+#include <iostream>
+using namespace std;
+
+
+void main()
+{
+
+	multy <int>  a;
+	multy <float> b;
+	int in1, in2;
+	float flt1, flt2;
+	cout << "Welcome to my system.\n";
+	cout << "Input Two Integers : ";
+	cin >> in1 >> in2;
+	cout << "Input Two float :";
+	cin >> flt1>>flt2;
+
+
+	a.setvalue(in2,in1);
+	cout << "Multiplication of two integers : " ;
+	a.tomultiply();
+	b.setvalue(flt1, flt2);
+	cout << "Multiplication of two float : ";
+	b.tomultiply();
+
+	system("pause");
+}
+
+multi.h
+
+#pragma once
+#ifndef MULT_H
+#define MULT_H
+#include <iostream>
+using namespace std;
+
+template <class T>
+class multy
+{
+public:
+	multy();
+	~multy();
+	void setvalue(T , T );
+	void tomultiply() ;
+private:
+	T x, y;
+};
+
+#endif // !MULT_H
+
+template <class T>
+multy<T>::multy() {}
+template <class T>
+multy<T>::~multy() {}
+
+template <class T>
+void multy<T>::setvalue(T num1, T num2)
+{
+	x = num2;
+	y = num1;
+
+}
+
+template <class T>
+void multy<T>::tomultiply() 
+{
+	T a;
+	a = x * y;	
+	cout << a << endl;
+}
+
