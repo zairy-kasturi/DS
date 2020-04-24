@@ -1,0 +1,34 @@
+
+main.cpp
+#include <iostream>
+using namespace std;
+
+template <class T>
+void tomultiply(T x, T y)
+{
+	T a;
+	a = x * y;
+	cout << a;
+
+}
+
+
+void main()
+{
+	int in1, in2;
+	float flt1, flt2;
+	cout << "Welcome to my system.\n";
+	cout << "Input Two Integers : ";
+	cin >> in1 >> in2;
+	cout << "Input Two float :";
+	cin >> flt1>>flt2;
+
+	cout << "Multiplication of two integers: ";
+	tomultiply(in1, in2);
+	cout << "\nMultiplication of two float: ";
+	tomultiply(flt1, flt2);
+	cout << endl;
+
+
+	system("pause");
+}
