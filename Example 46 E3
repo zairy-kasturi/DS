@@ -1,0 +1,63 @@
+main .cpp
+
+#include <iostream>
+using namespace std;
+#include "topup.h"
+
+void main()
+{
+
+	topup <int, double > a(1000, 4.5), b(20000, 11.1);
+	cout << "Output created by the first object.\n";
+	a.display();
+	a.Execute();
+	cout << "Output created by the first object.\n";
+	b.display();
+	b.Execute();
+
+
+
+	system("pause");
+}
+
+topup.h
+
+#ifndef TOPUP_H
+#define TOPUP_H
+
+template <class T1,class T2>
+class topup
+{
+public:
+	topup(T1 x, T2 y);
+	void display();
+	void Execute();
+
+private:
+	T1 nilai1;
+	T2 nilai2;
+};
+
+template <class T1, class T2>
+topup<T1,T2>::topup(T1 x, T2 y)
+{
+	nilai1 = x;
+	nilai2 = y;
+}
+
+template <class T1, class T2>
+void topup<T1, T2>::display()
+{
+	cout << "Total Loan is : " << nilai1 << endl;
+	cout << "Interest Rate : " << nilai2 << endl;
+}
+
+template <class T1, class T2>
+void topup<T1, T2>::Execute()
+{
+	cout << "Total must be paid : " << nilai1 + (nilai1*nilai2) << endl;
+	
+}
+
+#endif // !TOPUP_H
+
